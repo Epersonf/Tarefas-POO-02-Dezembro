@@ -17,7 +17,7 @@ public class execute {
 	 * Isso acontece pois a ordem depende da estrutura de dados adotada, além disso, as collections do tipo
 	 * SET nao permitem repeticao, pois funcionam como conjuntos matematicos.
 	 * 
-	 * Algumas estruturas Hash podem usar funcoes diferentes para mapear seus dados em um determinado array.
+	 * Estruturas de Hash, por exemplo, podem usar funcoes diferentes para mapear seus dados em um determinado array.
 	 * 
 	 */
 	
