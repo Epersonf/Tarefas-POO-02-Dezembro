@@ -48,7 +48,7 @@ public class Console {
 					Karaoke.songQueue.skip();
 					if (Karaoke.songQueue.getSongList().size() > 0)
 						System.out.println("Tocando agora: " + Karaoke.songQueue.getSongList().element().getName());
-				}
+				} else System.out.println("Nao ha musicas na fila...");
 				stage = 0;
 				break;
 			case 4:
