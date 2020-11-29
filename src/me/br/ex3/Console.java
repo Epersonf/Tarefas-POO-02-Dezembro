@@ -43,9 +43,12 @@ public class Console {
 				stage = 0;
 				break;
 			case 3:
-				System.out.println("Musica " + Karaoke.songQueue.getSongList().element().getName() + " terminou.");
-				Karaoke.songQueue.skip();
-				System.out.println("Tocando agora: " + Karaoke.songQueue.getSongList().element().getName());
+				if (Karaoke.songQueue.getSongList().size() > 0) {
+					System.out.println("Musica " + Karaoke.songQueue.getSongList().element().getName() + " terminou.");
+					Karaoke.songQueue.skip();
+					if (Karaoke.songQueue.getSongList().size() > 0)
+						System.out.println("Tocando agora: " + Karaoke.songQueue.getSongList().element().getName());
+				}
 				stage = 0;
 				break;
 			case 4:
@@ -54,18 +57,21 @@ public class Console {
 				for (Song s : Karaoke.existentSongs) {
 					songs.add(s);
 				}
+				ArrayList<Song> songs_ = new ArrayList<Song>();
 				i = 1;
 				for (Song s : songs) {
 					System.out.println(i + " - '" + s.getName() + "' de '" + s.getArtist() + "'");
 					i++;
+					songs_.add(s);
 				}
-				
-				ArrayList<Song> songs_ = new ArrayList<Song>(songs);
 				
 				System.out.println("Digite um id para a musica: (-1 = nenhuma)");
 				int id = scan.nextInt();
-				Song toAdd = songs_.get(id - 1);
-				Karaoke.songQueue.addSong(toAdd);
+				if (id != -1) {
+					Song toAdd = songs_.get(id - 1);
+					Karaoke.songQueue.addSong(toAdd);
+					System.out.println("Musica " + toAdd.getName() + " adicionada a fila.");
+				}
 				stage = 0;
 				break;
 			case 5:

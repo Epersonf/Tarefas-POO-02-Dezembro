@@ -1,15 +1,15 @@
 package me.br.ex3;
 
-import java.util.PriorityQueue;
+import java.util.LinkedList;
 
 public class SongQueue {	
-	private PriorityQueue<Song> songs;
+	private LinkedList<Song> songs;
 	
 	public SongQueue() {
-		songs = new PriorityQueue<Song>();
+		songs = new LinkedList<Song>();
 	}
 	
-	public PriorityQueue<Song> getSongList() {
+	public LinkedList<Song> getSongList() {
 		return songs;
 	}
 	
